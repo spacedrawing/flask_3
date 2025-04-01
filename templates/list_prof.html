@@ -10,13 +10,13 @@
     <h4>И на Марсе будут яблони цвести!</h4>
     {% if list_type == 'ul' %}
         <ul>
-            {% for item in prof_list %}
+            {% for item in prof_list["professions"] %}
                 <li>{{item}}</li>
             {% endfor %}
         </ul>
     {% elif list_type == 'ol' %}
         <ol>
-            {% for item in prof_list %}
+            {% for item in prof_list["professions"] %}
                 <li>{{item}}</li>
             {% endfor %}
         </ol>

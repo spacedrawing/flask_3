@@ -3,8 +3,6 @@ import json
 
 app = Flask(__name__)
 
-prof_list = ["пилот", "врач", "шут", "чорт"]
-
 @app.route('/')
 def inndex():
     return render_template('base.html', username='Володя', title='Ок')
@@ -16,6 +14,8 @@ def training(prof):
 
 @app.route('/list_prof/<list>')
 def list_prof(list):
+    with open("news.json", "rt", encoding="utf8") as f:
+        prof_list = json.loads(f.read())
     return render_template('list_prof.html', prof_list=prof_list, list_type=list.lower())
 
 
