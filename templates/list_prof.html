@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Миссия колонизация Марса</h1>
+    <h4>И на Марсе будут яблони цвести!</h4>
+    <ul>
+        {% for item in news['news'] %}
+            <h2>{{item["title"]}}</h2>
+            <div>{{item["content"]}}</div>
+        {% endfor %}
+    </ul>
+</body>
+</html>

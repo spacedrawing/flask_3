@@ -7,8 +7,16 @@
     <body>
         <h1>Миссия Колонизация Марса</h1>
         <h4>И на Марсе будут яблони цвести!</h4>
-        <h6>Если вы {{ prof }}, то вас не берем</h6>
-        <p>Где-то здесь наш офис, если что</p>
-        <img src="https://nemiga.info/karta/kazahstan/karta-kazahstana.jpg" alt="Это наш адрес">
+        <h6>Если вы {{ prof }}, то вас не берем</h6>  
+        {% if prof == 'врач' %}
+            <p style="font-size: 16;">А это вы</p>  
+           <img src="https://avatars.dzeninfra.ru/get-zen_doc/1703615/pub_5da6d501a3f6e4031d81f24c_5da828e58f011100ae3a771f/scale_1200" alt="ето вы">
+        {% elif prof == 'инженер' %}
+            <p style="font-size: 16;">А это вы</p>  
+            <img src="https://cs13.pikabu.ru/post_img/big/2020/12/29/7/1609236960126442424.png" alt="ето вы">
+        {% else %}
+            <p style="font-size: 16;">Вы нам не подходите</p>  
+            <img src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_651d63196114e1211fdd22fb_651ff916922f9e0ff4a11414/scale_1200" alt="Мы хз кто вы">
+        {% endif %}
     </body>
 </html>

@@ -2,13 +2,20 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+prof_list = ["пилот", "врач", "шут", "чорт"]
+
 @app.route('/')
 def inndex():
     return render_template('base.html', username='Володя', title='Ок')
 
 @app.route('/training/<prof>')
 def training(prof):
-    return render_template('training.html', prof=prof, title=f'{prof}ам, не рады')
+    return render_template('training.html', prof=prof.lower(), title=f'{prof}ам, не рады')
+
+
+@app.route('/list_prof/<list>')
+def list_prof(list):
+    return render_template('list_prof.html', prof_list=prof_list, list_type=list)
 
 
 if __name__ == '__main__':
