@@ -8,11 +8,20 @@
 <body>
     <h1>Миссия колонизация Марса</h1>
     <h4>И на Марсе будут яблони цвести!</h4>
-    <ul>
-        {% for item in news['news'] %}
-            <h2>{{item["title"]}}</h2>
-            <div>{{item["content"]}}</div>
-        {% endfor %}
-    </ul>
+    {% if list_type == 'ul' %}
+        <ul>
+            {% for item in prof_list %}
+                <li>{{item}}</li>
+            {% endfor %}
+        </ul>
+    {% elif list_type == 'ol' %}
+        <ol>
+            {% for item in prof_list %}
+                <li>{{item}}</li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <h3>Нету таких значий, если бы не автор, то все сломалось</h3>
+    {% endif %}
 </body>
 </html>
